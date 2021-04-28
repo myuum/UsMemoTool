@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsMemoTool", "UsMemoTool\UsMemoTool.csproj", "{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkSample", "InkSample\InkSample.csproj", "{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EE0D22E-84DE-4EC3-A410-01FA6E263813}
+	EndGlobalSection
+EndGlobal

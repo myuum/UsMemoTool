@@ -1,0 +1,53 @@
+﻿<Window x:Class="UsMemoTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UsMemoTool"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="825" Width="1573" MinWidth= "450" MinHeight="250" WindowStartupLocation="Manual">
+	<!-- ショートカットキーとコマンドオブジェクトを関連付けます -->
+	<Window.InputBindings>
+		<KeyBinding Gesture="Ctrl+Z" Command="{Binding UndoCommand}"/>
+	</Window.InputBindings>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="863*" MinWidth="50" />
+			<ColumnDefinition Width="136*" MinWidth="90" MaxWidth="200"/>
+		</Grid.ColumnDefinitions>
+		<Viewbox>
+			<InkCanvas Name="MainCanvas" Cursor="Arrow" UseCustomCursor="True" EditingModeInverted="None" ResizeEnabled="True" MoveEnabled="True" Strokes="{Binding InkStrokes, Mode=TwoWay}">
+				<InkCanvas.Background>
+					<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+				</InkCanvas.Background>
+			</InkCanvas>
+		</Viewbox>
+		<GridSplitter VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="4" Background="Black"/>
+		<ComboBox x:Name="MapBox" Grid.Column="1" ItemsSource="{Binding Maps}" SelectedItem="{Binding Map}" Height="25" VerticalAlignment="Top"/>
+		<Grid x:Name="grid" Grid.Column="1" Margin="0,30,0,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" CrewColor="Red"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="1" CrewColor="Blue"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="2" CrewColor="Green"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="3" CrewColor="Pink"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="4" CrewColor="Orange"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="5" CrewColor="Yellow"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="6" CrewColor="Black"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="7" CrewColor="White"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="8" CrewColor="Purple"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="9" CrewColor="Lime"/>
+		</Grid>
+	</Grid>
+
+</Window>
