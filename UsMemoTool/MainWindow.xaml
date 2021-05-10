@@ -1,11 +1,11 @@
 ﻿<Window x:Class="UsMemoTool.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UsMemoTool"
         mc:Ignorable="d"
-        Title="MainWindow" Height="825" Width="1573" MinWidth= "450" MinHeight="250" WindowStartupLocation="Manual">
+        Title="MainWindow" Height="508" Width="853" MinWidth= "450" MinHeight="250" WindowStartupLocation="Manual">
 	<!-- ショートカットキーとコマンドオブジェクトを関連付けます -->
 	<Window.InputBindings>
 		<KeyBinding Gesture="Ctrl+Z" Command="{Binding UndoCommand}"/>
@@ -15,12 +15,17 @@
 			<ColumnDefinition Width="863*" MinWidth="50" />
 			<ColumnDefinition Width="136*" MinWidth="90" MaxWidth="200"/>
 		</Grid.ColumnDefinitions>
+		<Button Content="全消去" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Height="22" Click="AllClear_Click" Panel.ZIndex="1" Margin="0,0,5,1"/>
+		<Button Content="描画モード" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Height="22" Click="Button_Click" Panel.ZIndex="1" Margin="0,0,75,1"/>
 		<Viewbox>
-			<InkCanvas Name="MainCanvas" Cursor="Arrow" UseCustomCursor="True" EditingModeInverted="None" ResizeEnabled="True" MoveEnabled="True" Strokes="{Binding InkStrokes, Mode=TwoWay}">
-				<InkCanvas.Background>
-					<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
-				</InkCanvas.Background>
-			</InkCanvas>
+			<Grid x:Name="inkGird" AllowDrop="True">
+				<Canvas x:Name="canvas" Panel.ZIndex="1" />
+				<InkCanvas Name="MainCanvas" Cursor="Arrow" UseCustomCursor="True" Strokes="{Binding InkStrokes, Mode=TwoWay}" Panel.ZIndex="0" Margin="-10,-10,10,10">
+					<InkCanvas.DefaultDrawingAttributes>
+						<DrawingAttributes Color="Black" FitToCurve="True" Height="2.0031496062992127" IgnorePressure="False" IsHighlighter="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="2.0031496062992127"/>
+					</InkCanvas.DefaultDrawingAttributes>
+				</InkCanvas>
+			</Grid>
 		</Viewbox>
 		<GridSplitter VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="4" Background="Black"/>
 		<ComboBox x:Name="MapBox" Grid.Column="1" ItemsSource="{Binding Maps}" SelectedItem="{Binding Map}" Height="25" VerticalAlignment="Top"/>

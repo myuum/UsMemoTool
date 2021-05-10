@@ -9,14 +9,8 @@ namespace UsMemoTool
     {
         public UsMap[] Maps { get; } = UsMap.AllMap;
         public UsMap Map { get; set; }
-        public Stack<Stroke> UndoStrokes = new Stack<Stroke>();
         //! Ctrl+Zのコマンドオブジェクト
         public DelegateCommand UndoCommand { get; private set; } 
-        public Stroke InkStroke
-        {
-            get => UndoStrokes.Peek();
-            set => UndoStrokes.Push(value);
-		}
         public MainViewModel()
         {
             UndoCommand = new DelegateCommand(UndoBody);
@@ -24,10 +18,10 @@ namespace UsMemoTool
         }
         public void UndoBody(object sender)
         {
-            if (UndoStrokes.Count <= 0) return;
-            var stroke = UndoStrokes.Pop();
-            InkStrokes.Remove(stroke);
+            if (InkStrokes.Count == 0) return;
+            InkStrokes.RemoveAt(InkStrokes.Count-1);
         }
         public StrokeCollection InkStrokes { get; set; } = new StrokeCollection();
+        
     }
 }

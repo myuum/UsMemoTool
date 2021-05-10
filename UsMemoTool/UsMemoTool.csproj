@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utility\AdornerBehavior.cs" />
     <Compile Include="Utility\AliasAttribute.cs" />
     <Compile Include="Data\Crew\Crew.cs" />
     <Compile Include="MyControl\CrewControl.xaml.cs">
@@ -82,6 +83,7 @@
     <Compile Include="MainViewModel.cs" />
     <Compile Include="Utility\DelegateCommand.cs" />
     <Compile Include="Utility\EnumExtensions.cs" />
+    <Compile Include="Utility\GhostAdorner.cs" />
     <Compile Include="Utility\Serializer\JsonSerializer.cs" />
     <Page Include="MyControl\CrewControl.xaml">
       <SubType>Designer</SubType>

@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows;
+using System.Windows.Input;
 using System.Windows.Controls;
 using System.Windows.Media;
 using UsMemoTool.Data.Crew;
 using UsMemoTool.Utility;
+using System.Windows;
 
 namespace UsMemoTool
 {
-    /// <summary>
-    /// CrewUserControl.xaml の相互作用ロジック
-    /// </summary>
-    public partial class CrewControl : UserControl
+	/// <summary>
+	/// CrewUserControl.xaml の相互作用ロジック
+	/// </summary>
+	public partial class CrewControl : UserControl
     {
         //イベント用デリゲート
         public delegate void IconMouseLeftButtonDown(object sender, EventArgs e);
@@ -21,7 +22,14 @@ namespace UsMemoTool
             add =>iconClick += value;
             remove=>iconClick -= value;
         }
-		private Crew crew = new Crew(PlayerColor.Black);
+        public delegate void IconDragEvent(object sender, EventArgs e);
+        event IconDragEvent iconDrag;
+        public event IconDragEvent IconDrag
+        {
+            add => iconDrag += value;
+            remove => iconDrag += value;
+		}
+        private Crew crew = new Crew(PlayerColor.Black);
         public PlayerColor CrewColor
         {
             get => crew.Color;
@@ -82,6 +90,8 @@ namespace UsMemoTool
             }
         }
         List<MenuItem> menuItems = new List<MenuItem>();
+
+        
         public CrewControl()
         {
             InitializeComponent();
@@ -109,13 +119,25 @@ namespace UsMemoTool
                 menu.Items.Add(item);
             }
             CrewIcon.ContextMenu = menu;
-            CrewIcon.MouseLeftButtonDown += (sender, e) =>
+            CrewIcon.PreviewMouseLeftButtonDown += (sender, e) =>
             {
                 if (iconClick == null) return;
                 sender = crew;
                 iconClick(sender, e);
             };
+            CrewIcon.MouseMove += (object sender, MouseEventArgs e) =>
+            {
+                var obj = sender as Image;
+                if (obj != null && e.LeftButton == MouseButtonState.Pressed)
+                {
+                    DragDrop.DoDragDrop(obj,
+                                         obj.Source.ToString(),
+                                         DragDropEffects.Copy);
+                }
+               
+            };
         }
+
 
 		private void setUsedBtn()
         {
