@@ -73,6 +73,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MyControl\MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\MapViewModel.cs" />
     <Compile Include="Utility\AdornerBehavior.cs" />
     <Compile Include="Utility\AliasAttribute.cs" />
     <Compile Include="Data\Crew\Crew.cs" />
@@ -101,6 +105,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyControl\MapControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -168,7 +180,10 @@
     <Resource Include="resource\Image\Crew\auyellowdead.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Themes\" />
+    <ProjectReference Include="..\TabAddDel\TabAddDel.csproj">
+      <Project>{0004cdfb-3133-4e21-9d51-4fb4342a0be8}</Project>
+      <Name>TabAddDel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

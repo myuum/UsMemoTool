@@ -44,4 +44,5 @@ namespace UsMemoTool.Data.Crew
         [Alias("水色")]Cyan,
         [Alias("黄緑")]Lime,
     }
+    
 }

@@ -16,11 +16,18 @@ namespace UsMemoTool
     {
         //イベント用デリゲート
         public delegate void IconMouseLeftButtonDown(object sender, EventArgs e);
-        public event IconMouseLeftButtonDown iconClick;
-        public event IconMouseLeftButtonDown IconClick 
-        { 
-            add =>iconClick += value;
-            remove=>iconClick -= value;
+        public event IconMouseLeftButtonDown iconButtonDown;
+        public event IconMouseLeftButtonDown IconButtonDown
+        {
+            add => iconButtonDown += value;
+            remove => iconButtonDown -= value;
+        }
+        public delegate void IconMouseLeftButtonUp(object sender, EventArgs e);
+        public event IconMouseLeftButtonUp iconButtonUp;
+        public event IconMouseLeftButtonUp IconButtonUp
+        {
+            add => iconButtonUp += value;
+            remove => iconButtonUp -= value;
         }
         public delegate void IconDragEvent(object sender, EventArgs e);
         event IconDragEvent iconDrag;
@@ -119,11 +126,17 @@ namespace UsMemoTool
                 menu.Items.Add(item);
             }
             CrewIcon.ContextMenu = menu;
-            CrewIcon.PreviewMouseLeftButtonDown += (sender, e) =>
+            CrewIcon.MouseLeftButtonDown += (sender, e) =>
             {
-                if (iconClick == null) return;
+                if (iconButtonDown == null) return;
                 sender = crew;
-                iconClick(sender, e);
+                iconButtonDown(sender, e);
+            };
+            CrewIcon.MouseLeftButtonUp += (sender, e) =>
+            {
+                if (iconButtonUp == null) return;
+                sender = crew;
+                iconButtonUp(sender, e);
             };
             CrewIcon.MouseMove += (object sender, MouseEventArgs e) =>
             {

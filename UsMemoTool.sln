@@ -5,22 +5,32 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsMemoTool", "UsMemoTool\UsMemoTool.csproj", "{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkSample", "InkSample\InkSample.csproj", "{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabAddDel", "TabAddDel\TabAddDel.csproj", "{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Debug|x64.Build.0 = Debug|Any CPU
 		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF648E12-37A2-48AE-B2F9-77A6D37DC8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Release|x64.ActiveCfg = Release|Any CPU
+		{5021AC1D-DB8B-4EAB-BFB4-6AFE8228418C}.Release|x64.Build.0 = Release|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Debug|x64.Build.0 = Debug|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Release|x64.ActiveCfg = Release|Any CPU
+		{0004CDFB-3133-4E21-9D51-4FB4342A0BE8}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

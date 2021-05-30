@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="UsMemoTool.MapControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+	<Grid>
+		<Button Content="全消去" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Height="22" Click="AllClear_Click" Panel.ZIndex="1" Margin="0,0,5,1"/>
+		<Button Content="描画モード" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Height="22" Click="Button_Click" Panel.ZIndex="1" Margin="0,0,75,1"/>
+		<Viewbox>
+			<Grid x:Name="inkGird" AllowDrop="True">
+				<Canvas x:Name="canvas" Panel.ZIndex="1" AllowDrop="True" />
+				<InkCanvas Name="MainCanvas" Cursor="Arrow" UseCustomCursor="True" Strokes="{Binding InkStrokes, Mode=TwoWay}" Panel.ZIndex="0" DefaultDrawingAttributes="{Binding DrawAttributes}" />
+			</Grid>
+		</Viewbox>
+	</Grid>
+</UserControl>

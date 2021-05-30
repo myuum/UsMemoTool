@@ -4,29 +4,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UsMemoTool"
+		xmlns:mytab="clr-namespace:TabAddDel;assembly=TabAddDel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="508" Width="853" MinWidth= "450" MinHeight="250" WindowStartupLocation="Manual">
+        Title="UsMemoTool" Height="508" Width="853" MinWidth= "450" MinHeight="250" WindowStartupLocation="Manual">
 	<!-- ショートカットキーとコマンドオブジェクトを関連付けます -->
 	<Window.InputBindings>
 		<KeyBinding Gesture="Ctrl+Z" Command="{Binding UndoCommand}"/>
 	</Window.InputBindings>
 	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="863*" MinWidth="50" />
 			<ColumnDefinition Width="136*" MinWidth="90" MaxWidth="200"/>
 		</Grid.ColumnDefinitions>
-		<Button Content="全消去" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Height="22" Click="AllClear_Click" Panel.ZIndex="1" Margin="0,0,5,1"/>
-		<Button Content="描画モード" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" Height="22" Click="Button_Click" Panel.ZIndex="1" Margin="0,0,75,1"/>
-		<Viewbox>
-			<Grid x:Name="inkGird" AllowDrop="True">
-				<Canvas x:Name="canvas" Panel.ZIndex="1" />
-				<InkCanvas Name="MainCanvas" Cursor="Arrow" UseCustomCursor="True" Strokes="{Binding InkStrokes, Mode=TwoWay}" Panel.ZIndex="0" Margin="-10,-10,10,10">
-					<InkCanvas.DefaultDrawingAttributes>
-						<DrawingAttributes Color="Black" FitToCurve="True" Height="2.0031496062992127" IgnorePressure="False" IsHighlighter="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="2.0031496062992127"/>
-					</InkCanvas.DefaultDrawingAttributes>
-				</InkCanvas>
-			</Grid>
-		</Viewbox>
+		<TextBlock Margin="8,0,0,0" TextWrapping="Wrap" Width="200" Panel.ZIndex="1" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+		マップ提供者　とみ
+		<Hyperlink NavigateUri="https://twitter.com/gocrazyfor77" RequestNavigate="Hyperlink_RequestNavigate">
+			Twitte
+		</Hyperlink>
+		　
+		<Hyperlink NavigateUri="https://tommyazb.hatenablog.com" RequestNavigate="Hyperlink_RequestNavigate">
+		Blog
+		</Hyperlink>
+		</TextBlock>
+		<StackPanel Orientation="Horizontal" Margin="0,0,0,449" />
+		<mytab:AddDelTabCustomControl x:Name="Tab" SelectionChanged="Tab_SelectionChanged" AddTabSetting="Tab_AddTabSetting" />
 		<GridSplitter VerticalAlignment="Stretch" HorizontalAlignment="Right" Width="4" Background="Black"/>
 		<ComboBox x:Name="MapBox" Grid.Column="1" ItemsSource="{Binding Maps}" SelectedItem="{Binding Map}" Height="25" VerticalAlignment="Top"/>
 		<Grid x:Name="grid" Grid.Column="1" Margin="0,30,0,0">
@@ -53,6 +57,8 @@
 			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="8" CrewColor="Purple"/>
 			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="9" CrewColor="Lime"/>
 		</Grid>
+
+
 	</Grid>
 
 </Window>
