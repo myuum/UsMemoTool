@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -158,8 +159,7 @@
     <Resource Include="resource\Image\Crew\aublackdead.png" />
     <Resource Include="resource\Image\Crew\aublue.png" />
     <Resource Include="resource\Image\Crew\aubluedead.png" />
-    <Resource Include="resource\Image\Crew\aubrown.png" />
-    <Resource Include="resource\Image\Crew\aubrowndead.png" />
+    <Resource Include="resource\Image\Crew\autandead.png" />
     <Resource Include="resource\Image\Crew\aucyan.png" />
     <Resource Include="resource\Image\Crew\aucyandead.png" />
     <Resource Include="resource\Image\Crew\augreen.png" />
@@ -196,6 +196,33 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\aurose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\aumaroon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\aubanana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\augray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\autan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\aucoral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\aumaroondead.png" />
+    <Resource Include="resource\Image\Crew\aurosedead.png" />
+    <Resource Include="resource\Image\Crew\augraydead.png" />
+    <Resource Include="resource\Image\Crew\aucoraldead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Image\Crew\aubananadead.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

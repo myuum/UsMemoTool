@@ -25,12 +25,18 @@ namespace UsMemoTool
             { PlayerColor.Pink, Color.FromRgb(237, 84, 186) },
             { PlayerColor.Orange, Color.FromRgb(239, 125, 13) },
             { PlayerColor.Yellow, Color.FromRgb(245, 245, 87) },
-            { PlayerColor.Black, Color.FromRgb(0, 0, 0) },
+            { PlayerColor.Black, Color.FromRgb(20, 20, 20) },
             { PlayerColor.White, Color.FromRgb(214, 224, 240) },
             { PlayerColor.Purple, Color.FromRgb(107, 47, 187) },
             { PlayerColor.Brown, Color.FromRgb(113, 73, 30) },
             { PlayerColor.Cyan, Color.FromRgb(56, 254, 220) },
-            { PlayerColor.Lime, Color.FromRgb(80, 239, 57) }
+            { PlayerColor.Lime,    Color.FromRgb(80, 239, 57) },
+            { PlayerColor.Maroon,  Color.FromRgb(95, 29, 46)},
+            { PlayerColor.Rose,    Color.FromRgb(236, 192, 211)},
+            { PlayerColor.Banana,  Color.FromRgb(240, 231, 168)},
+            { PlayerColor.Gray,    Color.FromRgb(117, 133, 147)},
+            { PlayerColor.Tan,     Color.FromRgb(145, 136, 119)},
+            { PlayerColor.Coral,  Color.FromRgb(215, 100, 100)}
 
         };
         public MainWindow()
@@ -60,9 +66,7 @@ namespace UsMemoTool
                     };
                 }
             }
-
             Tab.SelectionChanged += Tab_SelectionChanged;
-
         }
 
 		private void Tab_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -74,7 +78,6 @@ namespace UsMemoTool
             var map = new MapControl(viewModel.Map);
             var item = (e as TabEventArgs).item;
             item.Content = map;
-
         }
 
 		private Color CrewToColor(Crew crew) => ColorMapping[crew.Color];
