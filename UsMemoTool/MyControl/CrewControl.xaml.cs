@@ -122,6 +122,8 @@ namespace UsMemoTool
                 {
                     CrewColor = color;
                 };
+                var rect = new RectangleGeometry(new Rect(0,0,10,10));
+                
                 menuItems.Add(item);
                 menu.Items.Add(item);
             }

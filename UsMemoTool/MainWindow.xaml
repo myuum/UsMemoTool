@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UsMemoTool"
 		xmlns:mytab="clr-namespace:TabAddDel;assembly=TabAddDel"
         mc:Ignorable="d"
-        Title="UsMemoTool" Height="508" Width="853" MinWidth= "450" MinHeight="250" WindowStartupLocation="Manual">
+        Title="UsMemoTool" Height="756" Width="1008" MinWidth= "450" MinHeight="250" WindowStartupLocation="Manual">
 	<!-- ショートカットキーとコマンドオブジェクトを関連付けます -->
 	<Window.InputBindings>
 		<KeyBinding Gesture="Ctrl+Z" Command="{Binding UndoCommand}"/>
@@ -45,6 +45,11 @@
 				<RowDefinition Height="1*"/>
 				<RowDefinition Height="1*"/>
 				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
 			</Grid.RowDefinitions>
 			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" CrewColor="Red"/>
 			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="1" CrewColor="Blue"/>
@@ -56,6 +61,11 @@
 			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="7" CrewColor="White"/>
 			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="8" CrewColor="Purple"/>
 			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="9" CrewColor="Lime"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="10" CrewColor="Maroon"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="11" CrewColor="Rose"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="12" CrewColor="Banana"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="13" CrewColor="Gray"/>
+			<local:CrewControl IsAlive="True" Margin="0" Width="Auto" Height="Auto" Grid.Row="14" CrewColor="Tan"/>
 		</Grid>
 
 
