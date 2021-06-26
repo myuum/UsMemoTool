@@ -118,6 +118,13 @@ namespace UsMemoTool
             {
                 var item = new MenuItem();
                 item.Header = color.ToAliasString();
+                Brush brush = new SolidColorBrush(Crew.ColorMapping[color]);
+                Pen pen = new Pen( new SolidColorBrush(Color.FromRgb(0, 0, 0)), 1);
+                RectangleGeometry rectangle = new RectangleGeometry(new Rect(0,0,10,10));
+                Image icon = new Image();
+                icon.Source = new DrawingImage(new GeometryDrawing(brush, pen, rectangle));
+                item.Icon = icon;
+                
                 item.Click += (sender, e) =>
                 {
                     CrewColor = color;
