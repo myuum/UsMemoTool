@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -124,6 +125,22 @@ namespace TabAddDel
 
                 e.Handled = true;
             }
+        }
+        public void TabAllClear()
+		{
+            var delItems = new List<TabItem>();
+            foreach(var obj in Items)
+			{
+                if(obj is TabItem item)
+                if(item.Header is TabHeaderUserControl header)
+				{
+                    if (header.delBtn.Visibility != Visibility.Visible) continue;
+                        delItems.Add(item);
+                }
+			}
+            SelectedIndex = 0;
+            foreach (var item in delItems)
+                Items.Remove(item);
         }
 
         /// <summary>

@@ -43,7 +43,25 @@ namespace UsMemoTool
                     };
                 }
             }
+			Initialize.Click += Initialize_Click;
             Tab.SelectionChanged += Tab_SelectionChanged;
+        }
+
+        private void Initialize_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var child in LogicalTreeHelper.GetChildren(grid))
+            {
+                if ( child is CrewControl crewControl)
+                {
+                    crewControl.IsAlive = true;
+                    crewControl.IsUsed = false;
+                }
+            }
+            Tab.TabAllClear();
+            if(Tab.SelectedContent is MapControl map)
+			{
+                map.AllClear();
+			}
         }
 
 		private void Tab_SelectionChanged(object sender, SelectionChangedEventArgs e)

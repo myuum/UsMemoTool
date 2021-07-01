@@ -71,9 +71,15 @@ namespace UsMemoTool
 		}
 		private void AllClear_Click(object sender, RoutedEventArgs e)
 		{
-			viewModel.InkStrokes.Clear();
-			canvas.Children.Clear();
-		}
+            viewModel.InkStrokes.Clear();
+            canvas.Children.Clear();
+        }
+        public void AllClear()
+		{
+            viewModel.InkStrokes.Clear();
+            canvas.Children.Clear();
+
+        }
         public void SetCanvasImage()
         {
             if (viewModel == null) return;
